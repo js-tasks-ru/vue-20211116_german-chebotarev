@@ -7,15 +7,18 @@
   <body>
     <div id="app">
       <div>
-        <label><input type="radio" value="1" /> 1</label>
-        <label><input type="radio" value="2" /> 2</label>
-        <label><input type="radio" value="3" /> 3</label>
-        <label><input type="radio" value="4" /> 4</label>
-        <label><input type="radio" value="5" /> 5</label>
+        <label v-for="n in 5">
+          <input
+            v-model="selectedID"
+            :value="n"
+            type="radio"
+          />
+          {{n}}
+        </label>
 
         <hr />
 
-        <h3>MEETUP_TITLE</h3>
+        <h3>{{ displayedTitle }}</h3>
       </div>
     </div>
 
