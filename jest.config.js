@@ -16,7 +16,7 @@ const config = {
     // Support the same @ -> src alias mapping in source code
     '^@/(.*)$': '<rootDir>/src/$1',
     // Use commonjs version of lodash in tests
-    '^lodash-es$': '<rootDir>/node_modules/lodash/index.js',
+    '^lodash-es$': 'lodash',
   },
 
   testEnvironment: 'jsdom',
@@ -27,7 +27,7 @@ const config = {
   // Add taskbook utilities
   setupFilesAfterEnv: ['<rootDir>/utility_modules/taskbook-jest-setup.js'],
 
-  testMatch: ['**/__tests__/**/*.(spec|test|student-test).[jt]s?(x)'],
+  testMatch: ['**/[0-9][0-9]*/[0-9][0-9]*/**/__tests__/**/*.(spec|test|student-test).[jt]s?(x)'],
   // https://github.com/facebook/jest/issues/6766
   testURL: 'http://localhost/',
   // watchPlugins: [require.resolve('jest-watch-typeahead/filename'), require.resolve('jest-watch-typeahead/testname')],
